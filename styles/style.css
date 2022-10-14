@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+}
+
+.press {
+  font-family:"Tahoma";
+  font-size: medium;
+  color:#E2C1F3;
+  font-weight: 600;
+}
+
+.game-intro {
+  float: left;
+  padding: 0% 10%;
+}
+
+.game-intro p {
+  font-size: 18px;
+  font-family: "Verdana"
+}
+
+.greenCandyModified-img {
+  width: 300px;
+  height: auto;
+}
+
+body button {
+    border-radius: 20px 20px 20px 20px ;
+    height: 60px;
+    line-height: 28px;
+    color: #E2C1F3;
+    font-family: Tahoma;
+    width: 186px;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 12px;
+    background-color: #F584B5;
+    text-shadow: 1px 1px 6px #0059A0;
+    border: solid #E2C1F3 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+
+#game-board {
+    float: left;
+    padding: 20px 0px;
+}
+
+#canvas {
+  display: block;
+  justify-content: center;
+  text-align:center;
+}
