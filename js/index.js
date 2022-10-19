@@ -194,6 +194,3 @@ function update(){
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
 setInterval(update, 0)
-}
-
-
