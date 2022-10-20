@@ -234,7 +234,7 @@ const animate = () => {
 
   if (isGameOver) {
     if (health >= 150) {
-      //congratYouWinMusic.play();
+      congratYouWinMusic.play();
       //gameIntroMusic.pause()
       WinFrame.style.display = 'flex'
     } else {
