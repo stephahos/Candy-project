@@ -61,11 +61,11 @@ const ourson = new Image();
 ourson.src = './images/oursonM.png';
 
 let candyArr = [
-  { x: Math.random() * canvas.width - 70, y: 400, img: candy, width: 70, height: 80, points: 10 },
+  { x: Math.random() * canvas.width - 70, y: 300, img: candy, width: 70, height: 80, points: 10 },
   { x: Math.random() * canvas.width - 70, y: 50, img: blueice, width: 70, height: 80, points: 10 },
   { x: Math.random() * canvas.width - 70, y: 320, img: whitebluecream, width: 70, height: 80, points: 10 },
   { x: Math.random() * canvas.width - 70, y: 120, img: lollipop, width: 70, height: 80, points: 10 },
-  { x: Math.random() * canvas.width - 70, y: 580, img: roundPink, width: 70, height: 80, points: 10 },
+  { x: Math.random() * canvas.width - 70, y: 480, img: roundPink, width: 70, height: 80, points: 10 },
   { x: Math.random() * canvas.width - 45, y: 690, img: pinkGoldCandy, width: 45, height: 55, points: 10 },
   { x: Math.random() * canvas.width - 70, y: 780, img: icecream, width: 70, height: 80, points: 10 },
   { x: Math.random() * canvas.width - 70, y: 850, img: ourson, width: 70, height: 80, points: 10 },
@@ -97,14 +97,14 @@ const poivronrouge = new Image();
 poivronrouge.src = './images/poivron1-modified.png';
 
 let veggiesArr = [
-  { x: Math.random() * canvas.width - 80, y: 350, img: citrouille, width: 80, height: 90, points: 10 },
-  { x: Math.random() * canvas.width - 90, y: 30, img: carot, width: 80, height: 90, points: 10 },
+  { x: Math.random() * canvas.width - 80, y: 250, img: citrouille, width: 80, height: 90, points: 10 },
+  { x: Math.random() * canvas.width - 90, y: 130, img: carot, width: 80, height: 90, points: 10 },
   { x: Math.random() * canvas.width - 90, y: 700, img: onion, width: 80, height: 90, points: 10 },
   { x: Math.random() * canvas.width - 90, y: 150, img: patato, width: 80, height: 90, points: 10 },
   { x: Math.random() * canvas.width - 90, y: 60, img: tomato, width: 80, height: 90, points: 10 },
-  { x: Math.random() * canvas.width - 90, y: 200, img: poivron, width: 80, height: 90, points: 10 },
-  { x: Math.random() * canvas.width - 90, y: 500, img: choufleur, width: 80, height: 90, points: 10 },
-  { x: Math.random() * canvas.width - 90, y: 800, img: poivronrouge, width: 80, height: 90, points: 10 },
+  { x: Math.random() * canvas.width - 90, y: 10, img: poivron, width: 80, height: 90, points: 10 },
+  { x: Math.random() * canvas.width - 90, y: 550, img: choufleur, width: 80, height: 90, points: 10 },
+  { x: Math.random() * canvas.width - 90, y: 850, img: poivronrouge, width: 80, height: 90, points: 10 },
 ]
 
 //Create Player1

@@ -4,7 +4,8 @@
 
 ## Introduction
 
-Choose a Fairy Little Princesses and catch as much as veggies as you can in 30 seconds ! Be careful the Candy will hurt your health !
+Choose a Fairy Little Princess and catch a maximum of vegetables in 30 seconds but be careful don't touch the Candies! 
+You will see your stomach will thank you ;)
 
 
 
