@@ -161,28 +161,28 @@ window.onload = () => {
     startGame()
   }
   function startGame() {
-    gameIntro.style.display = 'none'
-    animate()
-    //Check if the moving variables are true and then move the player1 accordingly
-    //movement of the player1
-    document.addEventListener('keydown', event => {
-      if (event.code === 'ArrowRight') {
-        console.log('We are going right!')
-        isMovingRight = true
-      } else if (event.code === 'ArrowLeft') {
-        console.log('We are going left!')
-        isMovingLeft = true
-      } else if (event.code === 'ArrowUp') {
-        console.log('We are going Up!')
-        isMovingUp = true
-      } else if (event.code === 'ArrowDown') {
-        console.log('We are going down!')
-        isMovingDown = true
-    }
-    //stop the player1 from moving
-    document.addEventListener('keyup', () => {
-      isMovingRight = false
-      isMovingLeft = false
+  //Check if the moving variables are true and then move the player1 accordingly
+  //movement of the player1
+  document.addEventListener('keydown', event => {
+    if (event.code === 'ArrowRight') {
+      console.log('We are going right!')
+      isMovingRight = true
+    } else if (event.code === 'ArrowLeft') {
+      console.log('We are going left!')
+      isMovingLeft = true
+    } else if (event.code === 'ArrowUp') {
+      console.log('We are going Up!')
+      isMovingUp = true
+    } else if (event.code === 'ArrowDown') {
+      console.log('We are going down!')
+      isMovingDown = true
+  }
+  //stop the player1 from moving
+  document.addEventListener('keyup', () => {
+    isMovingRight = false
+    isMovingLeft = false
+    isMovingUp = false
+    isMovingDown = false
       isMovingUp = false
       isMovingDown = false
     })
