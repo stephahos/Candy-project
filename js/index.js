@@ -1,19 +1,34 @@
 // canvas parameters //
 const canvas = document.querySelector('canvas');
 canvas.style.border = '2px solid pink'
-
 const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
 
+//Selectors
 const gameIntro = document.querySelector('.gameIntro');
 const startBtn = document.querySelector('#start-button');
 const restartFrame = document.querySelector('.restartFrame');
 const restartBtn = document.querySelector('#restart-button');
 const gameOver = document.querySelector('#gameOverFrame');
 const WinFrame = document.querySelector('#WinFrame');
+const soundBtn = document.querySelector('sound');
 
+//SOUNDS
+const gameIntroMusic = new Audio('./sound/candygameintro.mp3');
+gameIntroMusic.volume = 0.1;
 
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+const touchCandyMusic = new Audio('./sound/Nonono.wav');
+touchCandyMusic.volume = 0.1;
+
+const congratYouWinMusic = new Audio('./sound/Celebration.mp3');
+congratYouWinMusic.volume = 0.1;
+
+const GameOverMusic = new Audio('./sound/LevelFailed.mp3');
+GameOverMusic.volume = 0.1;
+
+const CrackVeggieMusic = new Audio('./sound/Crack.mp3');
+CrackVeggieMusic.volume = 0.1;
 
 let isGameOver = false
 let health = 50
@@ -112,8 +127,8 @@ const player1 = new Image()
 player1.src = './images/manna2.png'
 let player1X = 0;
 let player1Y = 600;
-const player1Width = 70;
-const player1Height = 90;
+const player1Width = 90;
+const player1Height = 110;
 
 function drawPlayer1() {
   ctx.drawImage(player1, player1X, player1Y, player1Width, player1Height)
@@ -192,6 +207,7 @@ const animate = () => {
       player1Y < currentCandy.y + currentCandy.height &&
       player1Y + player1Height > currentCandy.y
     ) {
+      touchCandyMusic.play();
       health -= currentCandy.points;
       currentCandy.y = -300
       currentCandy.x = Math.random() * canvas.width - currentCandy.width
@@ -206,6 +222,7 @@ const animate = () => {
       player1Y < currentVeggies.y + currentVeggies.height &&
       player1Y + player1Height > currentVeggies.y
     ) {
+      CrackVeggieMusic.play();
       health += currentVeggies.points;
       currentVeggies.y = -300
       currentVeggies.x = Math.random() * canvas.width - currentVeggies.width
@@ -217,14 +234,22 @@ const animate = () => {
 
   if (isGameOver) {
     if (health >= 150) {
+      congratYouWinMusic();
+      gameIntroMusic.pause()
       WinFrame.style.display = 'flex'
     } else {
+      GameOverMusic.play();
+      gameIntroMusic.pause()
       gameOver.style.display = 'flex'
     }
     cancelAnimationFrame(gameId)
+    gameIntroMusic.pause()
+    GameOverMusic.play();
     canvas.style.display = 'none'
     restartBtn.style.display = 'block'
   } else if (health <= 0) {
+    gameIntroMusic.pause()
+    GameOverMusic.play();
     gameOver.style.display = 'flex'
     cancelAnimationFrame(gameId)
     canvas.style.display = 'none'
@@ -270,12 +295,24 @@ function startGame() {
 
 window.onload = () => {
   document.getElementById('start-button').onclick = () => {
+    gameIntroMusic.play();
     canvas.style.display = 'block'
     gameIntro.style.display = 'none'
     restartBtn.style.display = 'none'
     startGame()
+    soundBtn.addEventListener("click", () => {
+      if (soundBtn.innerHTML = "Play Music") {
+        gameIntroMusic.play()
+      } else {
+        soundBtn.innerHTML = "Stop Music";
+       // soundBtn.innerHTML = "Play Music";
+        gameIntroMusic.pause()
+      }
+    })
   }
 }
+
+ 
 
 document.getElementById('restart-button').onclick = () => {
   location.reload()
