@@ -16,7 +16,7 @@ canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
 let isGameOver = false
-let health = 100
+let health = 50
 let gameId = 0
 let isMovingRight = false
 let isMovingLeft = false
@@ -216,7 +216,7 @@ const animate = () => {
 
 
   if (isGameOver) {
-    if (health >= 200) {
+    if (health >= 150) {
       WinFrame.style.display = 'flex'
     } else {
       gameOver.style.display = 'flex'
