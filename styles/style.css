@@ -22,6 +22,7 @@ body {
   text-align: center;
   width: 100vw;
   height: auto;
+  background-size: 100vw;
 }
 
 .players{
@@ -33,6 +34,11 @@ body {
   height: fit-content;
 }
 
+.imagedisplaynone {
+  height: min-content;
+}
+
+
 .simsim{
   width: 6vw;
   height: auto;
@@ -40,8 +46,12 @@ body {
 
 .mannamicro{
   display:none;
-  width: 30vw;
+}
+
+.olaf{
+  width: 6vw;
   height: auto;
+  
 }
 
 .pinkgoldcandyM {
@@ -78,9 +88,10 @@ body {
 }
 
 .press {
-  font-family:"Tahoma";
+  font-family:"Lucida Console";
   font-size: medium;
-  color:#0059A0;
+  font-style: inherit;
+  color:#f2117d;
   font-weight: 600;
 }
 

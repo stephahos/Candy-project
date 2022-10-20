@@ -30,6 +30,7 @@ GameOverMusic.volume = 0.1;
 const CrackVeggieMusic = new Audio('./sound/Crack.mp3');
 CrackVeggieMusic.volume = 0.1;
 
+
 let isGameOver = false
 let health = 50
 let gameId = 0
@@ -39,6 +40,16 @@ let isMovingUp = false
 let isMovingDown = false
 
 // Background 
+
+const olaf = new Image();
+olaf.src = './images/Olaf_1.png';
+let olafX = 1200;
+let olafY = 500;
+const olafWidth = 100;
+const olafHeight = 200;
+ctx.drawImage(olaf, olafX, olafY, olafWidth, olafHeight);
+
+
 const backgroundImage = new Image();
 backgroundImage.src = "./images/backgroundcartoon.png";
 let backgroundImageX = 0;
@@ -124,11 +135,11 @@ let veggiesArr = [
 
 //Create Player1
 const player1 = new Image()
-player1.src = './images/manna2.png'
+player1.src = './images/MannaSven2_rev.png'
 let player1X = 0;
 let player1Y = 600;
-const player1Width = 90;
-const player1Height = 110;
+const player1Width = 130;
+const player1Height = 280;
 
 function drawPlayer1() {
   ctx.drawImage(player1, player1X, player1Y, player1Width, player1Height)
@@ -164,6 +175,7 @@ const drawTimer = () => {
 const animate = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawbackground()
+  ctx.drawImage(olaf, olafX, olafY, olafWidth, olafHeight);
   drawTimer()
 
   //Move Candies
