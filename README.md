@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Once upon a time were living two little girls called Sim-Sim and Manna-Micro.
-They were sweet and but they had a big flaw
+Choose a Fairy Little Princesses and catch as much as veggies as you can in 30 seconds ! Be careful the Candy will hurt your health !
+
 
 
