@@ -99,11 +99,14 @@ body {
  }
 
 #game-canvas {
-    height: auto;
+  display: none;
+  width: 100vw ;
+  height: auto;
 }
 
 #canvas {
   display: none;
+  width: 100vw;
   height: auto;
 }
 
