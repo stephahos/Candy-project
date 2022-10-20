@@ -109,7 +109,7 @@ let veggiesArr = [
 
 //Create Player1
 const player1 = new Image()
-player1.src = './images/Simsim2.png'
+player1.src = './images/manna2.png'
 let player1X = 0;
 let player1Y = 600;
 const player1Width = 70;
