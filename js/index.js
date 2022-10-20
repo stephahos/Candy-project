@@ -234,21 +234,21 @@ const animate = () => {
 
   if (isGameOver) {
     if (health >= 150) {
-      congratYouWinMusic();
-      gameIntroMusic.pause()
+      //congratYouWinMusic.play();
+      //gameIntroMusic.pause()
       WinFrame.style.display = 'flex'
     } else {
-      GameOverMusic.play();
-      gameIntroMusic.pause()
+      //GameOverMusic.play();
+      //gameIntroMusic.pause()
       gameOver.style.display = 'flex'
     }
     cancelAnimationFrame(gameId)
-    gameIntroMusic.pause()
+    //gameIntroMusic.pause()
     GameOverMusic.play();
     canvas.style.display = 'none'
     restartBtn.style.display = 'block'
   } else if (health <= 0) {
-    gameIntroMusic.pause()
+   // gameIntroMusic.pause()
     GameOverMusic.play();
     gameOver.style.display = 'flex'
     cancelAnimationFrame(gameId)
