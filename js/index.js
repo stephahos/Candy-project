@@ -12,7 +12,10 @@ const restartFrame = document.querySelector('.restartFrame');
 const restartBtn = document.querySelector('#restart-button');
 const gameOver = document.querySelector('#gameOverFrame');
 const WinFrame = document.querySelector('#WinFrame');
-const soundBtn = document.querySelector('sound');
+const soundBtn = document.querySelector('.sound');
+const displayScore = document.querySelector('#score');
+const displayGameOverScore = document.getElementById('gameOverscore');
+
 
 //SOUNDS
 const gameIntroMusic = new Audio('./sound/candygameintro.mp3');
@@ -33,6 +36,7 @@ CrackVeggieMusic.volume = 0.1;
 
 let isGameOver = false
 let health = 50
+//let score = 0
 let gameId = 0
 let isMovingRight = false
 let isMovingLeft = false
@@ -94,7 +98,7 @@ let candyArr = [
   { x: Math.random() * canvas.width - 70, y: 480, img: roundPink, width: 70, height: 80, points: 10 },
   { x: Math.random() * canvas.width - 45, y: 690, img: pinkGoldCandy, width: 45, height: 55, points: 10 },
   { x: Math.random() * canvas.width - 70, y: 780, img: icecream, width: 70, height: 80, points: 10 },
-  { x: Math.random() * canvas.width - 70, y: 850, img: ourson, width: 70, height: 80, points: 10 },
+  { x: Math.random() * canvas.width - 70, y: 950, img: ourson, width: 70, height: 80, points: 10 },
 ];
 
 //Make Veggies
@@ -120,7 +124,10 @@ const choufleur = new Image();
 choufleur.src = './images/choufleurM1.png';
 
 const poivronrouge = new Image();
-poivronrouge.src = './images/poivron1-modified.png';
+poivronrouge.src = './images/courgette_1.png';
+
+const courgette = new Image();
+courgette.src = './images/courgette_1.png';
 
 let veggiesArr = [
   { x: Math.random() * canvas.width - 80, y: 250, img: citrouille, width: 80, height: 90, points: 10 },
@@ -131,6 +138,7 @@ let veggiesArr = [
   { x: Math.random() * canvas.width - 90, y: 10, img: poivron, width: 80, height: 90, points: 10 },
   { x: Math.random() * canvas.width - 90, y: 550, img: choufleur, width: 80, height: 90, points: 10 },
   { x: Math.random() * canvas.width - 90, y: 850, img: poivronrouge, width: 80, height: 90, points: 10 },
+  { x: Math.random() * canvas.width - 70, y: 90, img: poivronrouge, width: 70, height: 90, points: 10 },
 ]
 
 //Create Player1
@@ -165,8 +173,8 @@ const drawTimer = () => {
     if (startTime > 0) {
       startTime -= 1;
     } else if (startTime === 0) {
-      console.log("Too late!")
       isGameOver = true;
+      displayScore.innerHTML= `You have ${health} points of health`
     }
   }
 }
@@ -221,9 +229,9 @@ const animate = () => {
     ) {
       touchCandyMusic.play();
       health -= currentCandy.points;
+     // displayScore.innerHTML= health
       currentCandy.y = -300
       currentCandy.x = Math.random() * canvas.width - currentCandy.width
-      console.log(health);
     }
     return currentCandy
   })
@@ -236,19 +244,20 @@ const animate = () => {
     ) {
       CrackVeggieMusic.play();
       health += currentVeggies.points;
+   //   displayScore.innerHTML = health
       currentVeggies.y = -300
       currentVeggies.x = Math.random() * canvas.width - currentVeggies.width
-      console.log(health);
     }
     return currentVeggies
   })
 
-
   if (isGameOver) {
     if (health >= 150) {
+      displayScore.innerHTML= `You have ${health} points of health`
       congratYouWinMusic.play();
       //gameIntroMusic.pause()
       WinFrame.style.display = 'flex'
+      restartBtn.style.display = 'block'
     } else {
       //GameOverMusic.play();
       //gameIntroMusic.pause()
@@ -257,10 +266,12 @@ const animate = () => {
     cancelAnimationFrame(gameId)
     //gameIntroMusic.pause()
     GameOverMusic.play();
+    displayGameOverScore.innerHTML = `You have ${health} points of health`
     canvas.style.display = 'none'
     restartBtn.style.display = 'block'
   } else if (health <= 0) {
    // gameIntroMusic.pause()
+    displayGameOverScore.innerHTML = `You have ${health} points of health`
     GameOverMusic.play();
     gameOver.style.display = 'flex'
     cancelAnimationFrame(gameId)
@@ -277,21 +288,16 @@ function startGame() {
   gameIntro.style.display = 'none';
   gameOver.style.display = 'none';
   animate()
-  //checkHealth()
   //Check if the moving variables are true and then move the player1 accordingly
   //movement of the player1
   document.addEventListener('keydown', event => {
     if (event.code === 'ArrowRight') {
-      console.log('We are going right!')
       isMovingRight = true
     } else if (event.code === 'ArrowLeft') {
-      console.log('We are going left!')
       isMovingLeft = true
     } else if (event.code === 'ArrowUp') {
-      console.log('We are going Up!')
       isMovingUp = true
     } else if (event.code === 'ArrowDown') {
-      console.log('We are going down!')
       isMovingDown = true
     }
     //stop the player1 from moving
@@ -325,45 +331,12 @@ window.onload = () => {
 }
 
  
-
 document.getElementById('restart-button').onclick = () => {
   location.reload()
 }
 
-/*
-function checkHealth() {
-    if (health <= 0){
-    gameOver.style.display = 'block'
-    restartBtn.style.display = 'block'
-    stopIfLost()
-      //isGameOver = true;
-      //console.log ("Game Over!");
-      //cancelAnimationFrame(gameId)
-      //scoreOnGameOer.innerHTML = score;
-    } else if (health === 200){
-    console.log ("You win!");
-    cancelAnimationFrame(gameId)
-    restartBtn.style.display = 'block'
-  } 
-} */
 
-/*
-function stopIfLost() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  cancelAnimationFrame(gameId)
 
-  ctx.beginPath()
-  ctx.font = 'bold 48px Gill Sans MT'
-  ctx.fillStyle = '#f15a42'
-  ctx.fillText('GAME-OVER', canvas.width / 3, canvas.height / 2)
-  ctx.closePath()
 
-  ctx.beginPath()
-  ctx.font = 'bold 48px Gill Sans MT'
-  ctx.fillStyle = '#F584B5'
-  ctx.fillText(health, canvas.width / 3 + 60, canvas.height / 2 + 60)
-  ctx.closePath()
-}
- */
 
 
