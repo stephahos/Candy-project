@@ -16,33 +16,44 @@ _"Game over Frame"_
 
 ## List of functions and methods:
 _window.onload = ()_
+
 _startGame()_
+
 _animate()_
+
 _drawbackground()_
+
 _drawTimer()_
+
 _ctx.drawObstacles()_
+
 _drawHealth()_
+
 _drawPlayer1()_
 
-## Movements:
+#Movements:
 _Move the Player1 to catch the Veggies without being hited by the Candies._
+
 _The Veggies and the Candies fall in a random way from the top of the canvas._
 
-## health logic:
+#Health logic:
 _Catch Veggie + 10 points_
+
 _Hit by a Candy - 10 points_
 
-## Game-Over & Winning Logic
+#Game-Over & Winning Logic
 _From 150 points of health the player wins_
 _under 150 points of health the player loose_
 
-# Backlog
+## Backlog
 _List of features that I would like to implement if I have more time:_
 
 _Create a better randomness of obstacles_
+
 _Make the obstacled fall faster after a certain time_
+
 _Create a Player2 to play with; the choose xould be made from the Game Intro by clicking on a charachter._
 
-# Links
+## Links
 
 _[Presentation link](https://docs.google.com/presentation/d/1VVk3b8bZB8VDnaPiZsDmacGyf2m2mf2wjLoCU6BhJy0/edit#slide=id.gcb9a0b074_2_0)_
