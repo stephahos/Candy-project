@@ -1,14 +1,13 @@
 ![]()
 
-# Module 1 project | Candy Fairy Tale
+# Module 1 project | Candy Veggie Fairy Story
 
 ## Introduction
 
-Choose a Fairy Little Princess and catch a maximum of vegetables in 30 seconds
-but be careful don't touch the Candies! 
-Your stomach will thank you ;)
+_It is like to be in one of Olaf's dream dreams...Choose a Fairy Little Princess and catch a maximum of vegetables in 30 seconds but be careful don't touch the Candies!_
+_Your stomach will thank you ;)_
 
-click here to see the deployed game
+_[click here to see the deployed game](https://stephahos.github.io/Candy-project/)_
 
 # Data structure 
 _"game-canvas"_
@@ -47,5 +46,5 @@ _-Create a Player2 to play with; the choose xould be made from the Game Intro by
 
 # Links
 
-_Presentation link_
+_[Presentation link](https://docs.google.com/presentation/d/1VVk3b8bZB8VDnaPiZsDmacGyf2m2mf2wjLoCU6BhJy0/edit#slide=id.gcb9a0b074_2_0)_
 _GitHub repository link_
