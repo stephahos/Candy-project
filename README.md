@@ -47,4 +47,3 @@ _-Create a Player2 to play with; the choose xould be made from the Game Intro by
 # Links
 
 _[Presentation link](https://docs.google.com/presentation/d/1VVk3b8bZB8VDnaPiZsDmacGyf2m2mf2wjLoCU6BhJy0/edit#slide=id.gcb9a0b074_2_0)_
-_GitHub repository link_
